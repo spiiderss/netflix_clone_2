@@ -1,3 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .main-button {
+    @apply py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg cursor-pointer;
+  }
+  .main-v-container {
+    @apply w-full h-screen flex flex-col justify-center;
+  }
+  .main-h-container {
+    @apply w-full h-screen flex items-center;
+  }
+}
+
 html,
 body {
   padding: 0;
