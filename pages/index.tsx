@@ -1,12 +1,11 @@
 import type { NextPage } from "next";
-import LoadingButton from "../components/common/LoadingButton.common";
-
+import Header from "../components/Header/Header";
+import Navbar from "../components/Navbar/Navbar";
 const Home: NextPage = () => {
   return (
     <div className="main-v-container">
-      <div className="max-w-[120px] h-auto px-2 py-1 shadow">
-        <LoadingButton content={"loading"} />
-      </div>
+      <Header />
+      <Navbar />
     </div>
   );
 };
