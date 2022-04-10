@@ -1,12 +1,11 @@
 import type { NextPage } from "next";
-import Header from "../components/Header/Header";
-import Navbar from "../components/Navbar/Navbar";
+import { Suspense } from "react";
+
 const Home: NextPage = () => {
   return (
-    <div className="main-v-container">
-      <Header />
-      <Navbar />
-    </div>
+    <Suspense fallback="loading...">
+      <div className="main-v-container text-2xl ">some</div>
+    </Suspense>
   );
 };
 
