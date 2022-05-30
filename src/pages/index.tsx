@@ -5,7 +5,10 @@ import { Suspense } from "react";
 const Home: NextPage = () => {
   return (
     <Suspense fallback="loading...">
-      <div className="main-v-container text-2xl ">some</div>
+      <div className=" flex justify-center items-center w-full h-screen bg-[#4650b1]">
+        <div className="text-4xl text-white">❄️ New Year is Coming! ❄️</div>
+        <div></div>
+      </div>
     </Suspense>
   );
 };
