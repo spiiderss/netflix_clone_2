@@ -2,14 +2,32 @@ const colors = require("tailwindcss/colors");
 
 module.exports = {
   mode: "jit",
+  darkMode: "class",
+
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
+
+  purge: {
+    enabled: true,
+    content: ["./src/**/*.tsx"],
+    options: {
+      safelist: ["dark"],
+    },
+  },
   theme: {
     extend: {
       fontFamily: {
         alt: ["Open Sans", "sans-serif"],
         base: ["Cormorant Upright", "serif"],
       },
+      typography: (theme) => ({
+        dark: {
+          css: {
+            color: "white",
+          },
+        },
+      }),
     },
+
     colors: {
       ...colors,
       custom: {

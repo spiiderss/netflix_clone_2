@@ -4,17 +4,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap");
 
 @layer utilities {
-  .main-button {
-    @apply w-full px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in bg-indigo-600 rounded-lg shadow-md cursor-pointer hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  .btn-base {
+    @apply px-4 py-2 font-semibold transition-all bg-black/40 text-white dark:bg-white dark:text-black duration-300 rounded-lg shadow-lg cursor-pointer hover:shadow-lg hover:-translate-y-2 active:-translate-y-1;
   }
-  .main-v-container {
-    @apply flex flex-col w-full h-screen;
+
+  .input-base {
+    @apply py-2 transition-all duration-300 ease-in-out px-4 rounded-lg focus:border-b-green-500 outline-none min-w-[500px] text-left border-b-2;
   }
-  .main-h-container {
-    @apply flex items-center w-full h-screen;
-  }
-  .container-width {
-    @apply w-[90%] md:w-[86%] lg:w-[75%];
+  .container-col {
+    @apply flex flex-col items-center justify-center w-full h-auto min-h-screen;
   }
 }
 
