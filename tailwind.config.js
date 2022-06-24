@@ -21,7 +21,7 @@ module.exports = {
       },
       typography: (theme) => ({
         dark: {
-          css: {
+          style: {
             color: "white",
           },
         },
@@ -39,6 +39,9 @@ module.exports = {
         light: "rgba(255,255,255,0.6)",
       },
     },
+  },
+  variants: {
+    typography: ["dark"],
   },
   plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
 };
