@@ -4,6 +4,9 @@ import SEO from "../../next-seo.config.js";
 import "../styles/globals.css";
 
 import { ThemeProvider } from "next-themes";
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 // eslint-disable-next-line require-jsdoc
 /**
@@ -14,16 +17,18 @@ import { ThemeProvider } from "next-themes";
  * @return {any}
  */
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      {/* the default seo , see :https://github.com/garmeeh/next-seo*/}
+   return (
+      <>
+         {/* the default seo , see :https://github.com/garmeeh/next-seo*/}
 
-      <DefaultSeo {...SEO} />
-      <ThemeProvider attribute="class">
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </>
-  );
+         <DefaultSeo {...SEO} />
+         <ThemeProvider attribute="class">
+            <QueryClientProvider client={queryClient}>
+               <Component {...pageProps} />
+            </QueryClientProvider>
+         </ThemeProvider>
+      </>
+   );
 }
 
 export default MyApp;

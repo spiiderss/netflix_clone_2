@@ -1,47 +1,52 @@
 const colors = require("tailwindcss/colors");
 
 module.exports = {
-  mode: "jit",
-  darkMode: "class",
+   mode: "jit",
+   darkMode: "class",
 
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+   content: ["./src/**/*.{js,ts,jsx,tsx}"],
 
-  purge: {
-    enabled: true,
-    content: ["./src/**/*.tsx"],
-    options: {
-      safelist: ["dark"],
-    },
-  },
-  theme: {
-    extend: {
-      fontFamily: {
-        alt: ["Open Sans", "sans-serif"],
-        base: ["Cormorant Upright", "serif"],
+   purge: {
+      enabled: true,
+      content: ["./src/**/*.tsx"],
+      options: {
+         safelist: ["dark"],
       },
-      typography: (theme) => ({
-        dark: {
-          style: {
-            color: "white",
-          },
-        },
-      }),
-    },
-
-    colors: {
-      ...colors,
-      custom: {
-        bg: "#1f1f38",
-        bg_variant: "#2c2c6c",
-        primary: "#4db5ff",
-        primary_variant: "rgba(77,181,255,0.4)",
-        white: "#ffff",
-        light: "rgba(255,255,255,0.6)",
+   },
+   theme: {
+      extend: {
+         fontFamily: {
+            alt: ["Open Sans", "sans-serif"],
+            base: ["Cormorant Upright", "serif"],
+         },
+         typography: (theme) => ({
+            dark: {
+               style: {
+                  color: "white",
+               },
+            },
+         }),
       },
-    },
-  },
-  variants: {
-    typography: ["dark"],
-  },
-  plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")],
+
+      colors: {
+         ...colors,
+         custom: {
+            bg: "#1f1f38",
+            bg_variant: "#2c2c6c",
+            primary: "#4db5ff",
+            primary_variant: "rgba(77,181,255,0.4)",
+            white: "#ffff",
+            light: "rgba(255,255,255,0.6)",
+         },
+      },
+   },
+   variants: {
+      typography: ["dark"],
+   },
+   plugins: [
+      require("@tailwindcss/forms"),
+      require("@tailwindcss/typography"),
+      require("tailwindcss-textshadow"),
+      require("tailwind-scrollbar"),
+   ],
 };
