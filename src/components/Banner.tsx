@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { BiInfoCircle, BiPlay } from "react-icons/bi";
 import { baseUrl } from "../constant/movies";
@@ -21,17 +20,17 @@ const Banner: React.FC<BannerProps> = ({ NetflixOriginals }) => {
       }
    }, [NetflixOriginals]);
 
+   console.log(`${baseUrl}${movie?.backdrop_path}`);
+
    return NetflixOriginals ? (
       <motion.div className="px-8 ">
          <div className="absolute h-[95vh]  w-screen -z-10 inset-0">
-            <Image
-               className="bg-gradient-to-b from-transparent to-white"
+            <img
+               className="bg-gradient-to-b w-full object-cover h-full from-transparent to-white"
                src={
                   `${baseUrl}${movie?.backdrop_path} ` ??
                   "https://image.tmdb.org/t/p/original/1Ds7xy7ILo8u2WWxdnkJth1jQVT.jpg"
                }
-               layout="fill"
-               objectFit="cover"
             />
             <div className="absolute w-full h-full bg-gradient-to-b from-transparent to-[#020611] "></div>
          </div>
